@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>все продукты.com</title>
+    
+    <style>
+        /* Grundlegendes Styling für das Body-Element */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('H3.jpg'); /* Hintergrundbild */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container für den Inhalt (zentrale Ausrichtung) */
+        .content {
+            text-align: center;
+            color: white;
+        }
+
+        /* Überschrift-Styling */
+        h1 {
+            color: rgb(255, 255, 255);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            margin-left: 455px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Schatten für die Lesbarkeit */
+        }
+
+        /* Container für die Karten */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 100px; /* Abstand zwischen den Karten */
+            padding: 20px;
+        }
+
+        /* Styling der Karte */
+        .card {
+            background-color: rgba(255, 255, 255, 0.8); /* Leicht transparent */
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(80, 80, 80, 0.712);
+            text-align: center;
+            flex-shrink: 0; /* Verhindert, dass die Karten kleiner werden */
+        }
+
+        /* Bild innerhalb der Karte */
+        .card__image-wrapper img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Titel der Karte */
+        .card__title {
+            margin: 15px 0 10px;
+            font-size: 1.2em;
+            color: rgb(0, 255, 42);
+        }
+
+        /* Beschreibung der Karte */
+        .card__description {
+            color: #333;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        /* Styling des Links */
+        .card__link {
+            color: rgb(174, 0, 255);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Button unter dem Link */
+        .card__buy-button {
+            background-color: #3992bb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Button Hover-Effekt */
+        .card__buy-button:hover {
+            background-color: #3d23d3;
+        }
+
+        .search-button {
+            background-color: #3992bb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 35px;
+            margin-left: 10px;
+        }
+
+        .search-button:hover {
+            background-color: #3d23d3;
+        }
+
+        .search-input {
+            padding: 10px 50px;
+            border-radius: 5px;
+        }
+    </style>
+
+    <script>
+        function openLink(url) {
+            window.location.href = url;
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value;
+            alert('Suche nach: ' + query); // Hier kannst du die Suchlogik einfügen
+        }
+    </script>
+</head>
+<body>
+    <div class="card-container">
+        <!-- Überschrift -->
+        <h1>Добро пожаловать на все продукты.com</h1>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Поиск товаров...">
+            <button class="search-button" type="button" onclick="handleSearch()">Поиск</button>
+        </div>
+
+        <!-- Wiederhole die Karte mit individuellem Link -->
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product.jpg" alt="Produktbild">
+            </a>
+
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.amazon.de/-/en/6063164-Magnetic-Problem-Solving-Multicoloured/dp/B09QX6KJRM/ref=bmx_dp_m39j94en_d_sccl_2_2/257-6550246-7736600?pd_rd_w=w1gow&content-id=amzn1.sym.7df9fb5e-3feb-4608-b891-7f6abaed1317&pf_rd_p=7df9fb5e-3feb-4608-b891-7f6abaed1317&pf_rd_r=4AMT87P2F832PYTBSN42&pd_rd_wg=jDdRX&pd_rd_r=5fe49b0e-3c5d-4591-9980-f86524d0f5f8&pd_rd_i=B09QX6KJRM&psc=1">Дополнительная информация</a>
+            </h3>
+
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Кубик Рубик</p>
+            </div>
+
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.amazon.de/-/en/6063164-Magnetic-Problem-Solving-Multicoloured/dp/B09QX6KJRM')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product1.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.bing.com/aclk?ld=e80jd4FWOCO_3WJcDW0rgZ3DVUCUzT8IzVUWWJoNEiGiXTuPc7BenNThWu_W-GuEZdoMD65IGGvwrU8iErBOcEpE38-byTyKv86JBMGwew4N4WAGCBaqtTw-CKiHgDQX4Yj2DQwH9faIrt9kNWbUoJ5k2z8dRBpOGHmU4r-SoAcnQBFxZ0jBkQjTSVY7K5pL_x_SMAvw&u=aHR0cHMlM2ElMmYlMmZ3d3cubWFya3QuZGUlMmZ0aWVyZSUyZmthdHplbiUyZiUzZnV0bV9zb3VyY2UlM2RtaWNyb3NvZnQlMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkMTJfVGllcmVfS2F0emVuJTI2X3NfcmVmJTNkJTI2bXNjbGtpZCUzZGRjMzE0NGY1NTVkOTE2ZTk0NTk0MjIwNDA4ZTM4MmRhJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkMTJfVGllcmVfS2F0emVuJTI2dXRtX3Rlcm0lM2RrYXR6ZSUyNTIwa2F1ZmVuJTI2dXRtX2NvbnRlbnQlM2RLYXR6ZW5fQWxsZ2VtZWlu&rlid=dc3144f555d916e94594220408e382da&ntb=1">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Кошачий рынок</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.bing.com/aclk?ld=e80jd4FWOCO_3WJcDW0rgZ3DVUCUzT8IzVUWWJoNEiGiXTuPc7BenNThWu_W-GuEZdoMD65IGGvwrU8iErBOcEpE38-byTyKv86JBMGwew4N4WAGCBaqtTw-CKiHgDQX4Yj2DQwH9faIrt9kNWbUoJ5k2z8dRBpOGHmU4r-SoAcnQBFxZ0jBkQjTSVY7K5pL_x_SMAvw&u=aHR0cHMlM2ElMmYlMmZ3d3cubWFya3QuZGUlMmZ0aWVyZSUyZmthdHplbiUyZiUzZnV0bV9zb3VyY2UlM2RtaWNyb3NvZnQlMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkMTJfVGllcmVfS2F0emVuJTI2X3NfcmVmJTNkJTI2bXNjbGtpZCUzZGRjMzE0NGY1NTVkOTE2ZTk0NTk0MjIwNDA4ZTM4MmRhJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkMTJfVGllcmVfS2F0emVuJTI2dXRtX3Rlcm0lM2RrYXR6ZSUyNTIwa2F1ZmVuJTI2dXRtX2NvbnRlbnQlM2RLYXR6ZW5fQWxsZ2VtZWlu&rlid=dc3144f555d916e94594220408e382da&ntb=1')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="https://www.amazon.de/-/en/Intenso-Rainbow-Line-Flash-Drive/dp/B088KRDH5D/ref=sr_1_4?crid=NQ9X4IW0OUBN&dib=eyJ2IjoiMSJ9.FcWf4naJw92cXLINLcphk00Nu4cdQgmLj--1XUqanhqL0piTEr5Ig4zN1qHYMgc6uY4GPG-xHFU0aQVaeK0GBQ7F9ZmB3DAdVSpPksz6q0RkGI5DoWj-sNuyr_KS5l1tAZ0lq-30ZBEKgXkM-f9H18ha8WXTjFo2-rlhC7PTjEc7Of4oKPOFVmRphCep5eqiA2EyxD3kkYlBvwN7j2g02jetWx5RL8rjEpLzT_saphc.b5U-LyswK5OiYVu7RQ2RsRvrAn9L85sSUyrL6gonvMM&dib_tag=se&keywords=usb+-+stick+128gb&qid=1727095227&sprefix=usb+-+stick%2Caps%2C87&sr=8-4">
+                <img class="card__image" src="product2.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.amazon.de/-/en/Intenso-Rainbow-Line-Flash-Drive/dp/B088KRDH5D/ref=sr_1_4?crid=NQ9X4IW0OUBN&dib=eyJ2IjoiMSJ9.FcWf4naJw92cXLINLcphk00Nu4cdQgmLj--1XUqanhqL0piTEr5Ig4zN1qHYMgc6uY4GPG-xHFU0aQVaeK0GBQ7F9ZmB3DAdVSpPksz6q0RkGI5DoWj-sNuyr_KS5l1tAZ0lq-30ZBEKgXkM-f9H18ha8WXTjFo2-rlhC7PTjEc7Of4oKPOFVmRphCep5eqiA2EyxD3kkYlBvwN7j2g02jetWx5RL8rjEpLzT_saphc.b5U-LyswK5OiYVu7RQ2RsRvrAn9L85sSUyrL6gonvMM&dib_tag=se&keywords=usb+-+stick+128gb&qid=1727095227&sprefix=usb+-+stick%2Caps%2C87&sr=8-4">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>USB-накопитель</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.amazon.de/-/en/Intenso-Rainbow-Line-Flash-Drive/dp/B088KRDH5D/ref=sr_1_4?crid=NQ9X4IW0OUBN&dib=eyJ2IjoiMSJ9.FcWf4naJw92cXLINLcphk00Nu4cdQgmLj--1XUqanhqL0piTEr5Ig4zN1qHYMgc6uY4GPG-xHFU0aQVaeK0GBQ7F9ZmB3DAdVSpPksz6q0RkGI5DoWj-sNuyr_KS5l1tAZ0lq-30ZBEKgXkM-f9H18ha8WXTjFo2-rlhC7PTjEc7Of4oKPOFVmRphCep5eqiA2EyxD3kkYlBvwN7j2g02jetWx5RL8rjEpLzT_saphc.b5U-LyswK5OiYVu7RQ2RsRvrAn9L85sSUyrL6gonvMM&dib_tag=se&keywords=usb+-+stick+128gb&qid=1727095227&sprefix=usb+-+stick%2Caps%2C87&sr=8-4')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="https://www.bing.com/aclk?ld=e8B9nytxixstDWbqXDRKEhWDVUCUzaUgImMDrc8UEyrT6N9Fv-uzbJs1tX1HVVCcI4UCh9CdWW1UCMhqZkK43A3lHNZBm8KjS0oSBB0dDQPBomXufBoFTt5XPDr8lL_J5sIOCpy1GaC2ckQ74zBr0uw-tzYIuqhVUffUmyWoe_NtGPLWRuiLPfOvPob6cwQFPv_SFp5w&u=aHR0cHMlM2ElMmYlMmZ3d3cudm9lbGtuZXIuZGUlMmZpbmRleC5waHAlM2ZtcCUzZHByb2R1Y3RzJTI2ZmlsZSUzZGluZm8lMjZyZWYlM2Q1MCUyNnByb2R1Y3RzX21vZGVsJTNkVzExNzg4JTI2cmVkaXJlY3QlM2QwJTI2bXNjbGtpZCUzZDA2MWUxMDcwZGI5NzE1NjhhODgyNzY4MWJlYWFiMTEyJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkKERFKSUyNTIwUExBJTI1MjBVJTI1MkJNJTI1MkIlMjZ1dG1fdGVybSUzZDQ1NzUzNDI3Njc1ODkxODAlMjZ1dG1fY29udGVudCUzZEFkJTI1MjBncm91cCUyNTIwJTI1MjMx&rlid=061e1070db971568a8827681beaab112&ntb=1&ntb=1">
+                <img class="card__image" src="product3.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.bing.com/aclk?ld=e8B9nytxixstDWbqXDRKEhWDVUCUzaUgImMDrc8UEyrT6N9Fv-uzbJs1tX1HVVCcI4UCh9CdWW1UCMhqZkK43A3lHNZBm8KjS0oSBB0dDQPBomXufBoFTt5XPDr8lL_J5sIOCpy1GaC2ckQ74zBr0uw-tzYIuqhVUffUmyWoe_NtGPLWRuiLPfOvPob6cwQFPv_SFp5w&u=aHR0cHMlM2ElMmYlMmZ3d3cudm9lbGtuZXIuZGUlMmZpbmRleC5waHAlM2ZtcCUzZHByb2R1Y3RzJTI2ZmlsZSUzZGluZm8lMjZyZWYlM2Q1MCUyNnByb2R1Y3RzX21vZGVsJTNkVzExNzg4JTI2cmVkaXJlY3QlM2QwJTI2bXNjbGtpZCUzZDA2MWUxMDcwZGI5NzE1NjhhODgyNzY4MWJlYWFiMTEyJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkKERFKSUyNTIwUExBJTI1MjBVJTI1MkJNJTI1MkIlMjZ1dG1fdGVybSUzZDQ1NzUzNDI3Njc1ODkxODAlMjZ1dG1fY29udGVudCUzZEFkJTI1MjBncm91cCUyNTIwJTI1MjMx&rlid=061e1070db971568a8827681beaab112&ntb=1&ntb=1">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>конденсатор</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.bing.com/aclk?ld=e8B9nytxixstDWbqXDRKEhWDVUCUzaUgImMDrc8UEyrT6N9Fv-uzbJs1tX1HVVCcI4UCh9CdWW1UCMhqZkK43A3lHNZBm8KjS0oSBB0dDQPBomXufBoFTt5XPDr8lL_J5sIOCpy1GaC2ckQ74zBr0uw-tzYIuqhVUffUmyWoe_NtGPLWRuiLPfOvPob6cwQFPv_SFp5w&u=aHR0cHMlM2ElMmYlMmZ3d3cudm9lbGtuZXIuZGUlMmZpbmRleC5waHAlM2ZtcCUzZHByb2R1Y3RzJTI2ZmlsZSUzZGluZm8lMjZyZWYlM2Q1MCUyNnByb2R1Y3RzX21vZGVsJTNkVzExNzg4JTI2cmVkaXJlY3QlM2QwJTI2bXNjbGtpZCUzZDA2MWUxMDcwZGI5NzE1NjhhODgyNzY4MWJlYWFiMTEyJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkKERFKSUyNTIwUExBJTI1MjBVJTI1MkJNJTI1MkIlMjZ1dG1fdGVybSUzZDQ1NzUzNDI3Njc1ODkxODAlMjZ1dG1fY29udGVudCUzZEFkJTI1MjBncm91cCUyNTIwJTI1MjMx&rlid=061e1070db971568a8827681beaab112&ntb=1&ntb=1')">Купить</button>
+        </article>
+
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="https://www.bing.com/aclk?ld=e86q2r048Eyx16TwM_rHtwHzVUCUzRuT7GjahVgdVQndrMqRiJL7yR0ybukn9LV4N53bvAa4OoWh3Y7uFtW1XjivEUm07xj2PYvv8vnMV88DAp5Zqa4fvTNlmT8e9qNVsXkEiKjqAs3__g9CGDp4SaSRz3YtR7PiJ4zc0ZhqatPZP0cfSHRJsvluDrGk8XUPLJN_mskWoVpXB6BZbt6yWPfXhjYzlZugB6cNYOOb8ydIivr6l9-_hWB3EObjTSUi2EIN6kjCt5UQT0cEE-PT_apRn4J-X0RQnUc0mdLGXZIy4Ru7Yl&u=aHR0cHMlM2ElMmYlMmZ3d3cua2F1ZmxhbmQuZGUlMmZwcm9kdWN0JTJmMzU4OTA5OTEwJTJmJTNmbXNjbGtpZCUzZGVmNjJmOWNlNTdjNTFjYzU3ZWQyOWYzZjMyNWMyYzFlJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkU0NfUE1heF9QR19sb3clMjZ1dG1fdGVybSUzZDIzMzExNzA4MDk3ODQ1NDQlMjZ1dG1fY29udGVudCUzZFNDX1BNYXhfUEdfbG93&rlid=ef62f9ce57c51cc57ed29f3f325c2c1e&ntb=1&ntb=1">
+                <img class="card__image" src="product4.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.bing.com/aclk?ld=e86q2r048Eyx16TwM_rHtwHzVUCUzRuT7GjahVgdVQndrMqRiJL7yR0ybukn9LV4N53bvAa4OoWh3Y7uFtW1XjivEUm07xj2PYvv8vnMV88DAp5Zqa4fvTNlmT8e9qNVsXkEiKjqAs3__g9CGDp4SaSRz3YtR7PiJ4zc0ZhqatPZP0cfSHRJsvluDrGk8XUPLJN_mskWoVpXB6BZbt6yWPfXhjYzlZugB6cNYOOb8ydIivr6l9-_hWB3EObjTSUi2EIN6kjCt5UQT0cEE-PT_apRn4J-X0RQnUc0mdLGXZIy4Ru7Yl&u=aHR0cHMlM2ElMmYlMmZ3d3cua2F1ZmxhbmQuZGUlMmZwcm9kdWN0JTJmMzU4OTA5OTEwJTJmJTNmbXNjbGtpZCUzZGVmNjJmOWNlNTdjNTFjYzU3ZWQyOWYzZjMyNWMyYzFlJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkU0NfUE1heF9QR19sb3clMjZ1dG1fdGVybSUzZDIzMzExNzA4MDk3ODQ1NDQlMjZ1dG1fY29udGVudCUzZFNDX1BNYXhfUEdfbG93&rlid=ef62f9ce57c51cc57ed29f3f325c2c1e&ntb=1&ntb=1">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>чехол для ног</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.bing.com/aclk?ld=e86q2r048Eyx16TwM_rHtwHzVUCUzRuT7GjahVgdVQndrMqRiJL7yR0ybukn9LV4N53bvAa4OoWh3Y7uFtW1XjivEUm07xj2PYvv8vnMV88DAp5Zqa4fvTNlmT8e9qNVsXkEiKjqAs3__g9CGDp4SaSRz3YtR7PiJ4zc0ZhqatPZP0cfSHRJsvluDrGk8XUPLJN_mskWoVpXB6BZbt6yWPfXhjYzlZugB6cNYOOb8ydIivr6l9-_hWB3EObjTSUi2EIN6kjCt5UQT0cEE-PT_apRn4J-X0RQnUc0mdLGXZIy4Ru7Yl&u=aHR0cHMlM2ElMmYlMmZ3d3cua2F1ZmxhbmQuZGUlMmZwcm9kdWN0JTJmMzU4OTA5OTEwJTJmJTNmbXNjbGtpZCUzZGVmNjJmOWNlNTdjNTFjYzU3ZWQyOWYzZjMyNWMyYzFlJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkU0NfUE1heF9QR19sb3clMjZ1dG1fdGVybSUzZDIzMzExNzA4MDk3ODQ1NDQlMjZ1dG1fY29udGVudCUzZFNDX1BNYXhfUEdfbG93&rlid=ef62f9ce57c51cc57ed29f3f325c2c1e&ntb=1&ntb=1')">Купить</button>
+        </article>
+
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="https://www.bing.com/aclk?ld=e8JNF5uTKUFfcE9QoI3UzJKDVUCUwOXsclHZIU-WeL1vZNeOsL6olaLs6zwDIGK2tGVLj02MvhXRVtm1kXiTd_798r2-xp5M7LkRktkkiESQg8ook3h6FJCfgV2zGJ26FQj4G_ayjFZvCye1ANKCs5TeVZvipv1vad_eNchVaIH7XgBdGsChS__-Wz40cWWuotR_iKkA&u=aHR0cHMlM2ElMmYlMmZ3d3cueHh4bHV0ei5kZSUyZnAlMmZyaWVzcy1rb2NodG9wZnNldC1zbWFyYWdkLTctdGVpbGlnLTAwMzg3ODAyMDkwMyUzZnV0bV90ZXJtJTNkMDAzODc4MDIwOTAzJTI2dXRtX2NvbnRlbnQlM2RudWxsX2gwX3Byb2R1Y3QtbGlzdGluZy1hZF9oMDIzX3RvZXBmZV9pbW1lZGlhdGVseSUyNnZpZXclM2RtcGxwJTI2dXRtX3NvdXJjZSUzZGJpbmctbyUyNnV0bV9tZWRpdW0lM2RzaG9wcGluZyUyNnV0bV9jYW1wYWlnbiUzZG51bGxfc2VsX2NsdXN0ZXItYl9zc2Nfc2FsLWRvX29uX3NlYS1zaG9fbHR6LWRlJTI2bXNjbGtpZCUzZDMxZTVkZjY2ODY1OTFmMjNiYWMzYjk5N2UzYTEzZDIw&rlid=31e5df6686591f23bac3b997e3a13d20&ntb=1&ntb=1">
+                <img class="card__image" src="product5.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.bing.com/aclk?ld=e8JNF5uTKUFfcE9QoI3UzJKDVUCUwOXsclHZIU-WeL1vZNeOsL6olaLs6zwDIGK2tGVLj02MvhXRVtm1kXiTd_798r2-xp5M7LkRktkkiESQg8ook3h6FJCfgV2zGJ26FQj4G_ayjFZvCye1ANKCs5TeVZvipv1vad_eNchVaIH7XgBdGsChS__-Wz40cWWuotR_iKkA&u=aHR0cHMlM2ElMmYlMmZ3d3cueHh4bHV0ei5kZSUyZnAlMmZyaWVzcy1rb2NodG9wZnNldC1zbWFyYWdkLTctdGVpbGlnLTAwMzg3ODAyMDkwMyUzZnV0bV90ZXJtJTNkMDAzODc4MDIwOTAzJTI2dXRtX2NvbnRlbnQlM2RudWxsX2gwX3Byb2R1Y3QtbGlzdGluZy1hZF9oMDIzX3RvZXBmZV9pbW1lZGlhdGVseSUyNnZpZXclM2RtcGxwJTI2dXRtX3NvdXJjZSUzZGJpbmctbyUyNnV0bV9tZWRpdW0lM2RzaG9wcGluZyUyNnV0bV9jYW1wYWlnbiUzZG51bGxfc2VsX2NsdXN0ZXItYl9zc2Nfc2FsLWRvX29uX3NlYS1zaG9fbHR6LWRlJTI2bXNjbGtpZCUzZDMxZTVkZjY2ODY1OTFmMjNiYWMzYjk5N2UzYTEzZDIw&rlid=31e5df6686591f23bac3b997e3a13d20&ntb=1&ntb=1">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Кастрюли, кастрюля, Скаваротка </p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.bing.com/aclk?ld=e8JNF5uTKUFfcE9QoI3UzJKDVUCUwOXsclHZIU-WeL1vZNeOsL6olaLs6zwDIGK2tGVLj02MvhXRVtm1kXiTd_798r2-xp5M7LkRktkkiESQg8ook3h6FJCfgV2zGJ26FQj4G_ayjFZvCye1ANKCs5TeVZvipv1vad_eNchVaIH7XgBdGsChS__-Wz40cWWuotR_iKkA&u=aHR0cHMlM2ElMmYlMmZ3d3cueHh4bHV0ei5kZSUyZnAlMmZyaWVzcy1rb2NodG9wZnNldC1zbWFyYWdkLTctdGVpbGlnLTAwMzg3ODAyMDkwMyUzZnV0bV90ZXJtJTNkMDAzODc4MDIwOTAzJTI2dXRtX2NvbnRlbnQlM2RudWxsX2gwX3Byb2R1Y3QtbGlzdGluZy1hZF9oMDIzX3RvZXBmZV9pbW1lZGlhdGVseSUyNnZpZXclM2RtcGxwJTI2dXRtX3NvdXJjZSUzZGJpbmctbyUyNnV0bV9tZWRpdW0lM2RzaG9wcGluZyUyNnV0bV9jYW1wYWlnbiUzZG51bGxfc2VsX2NsdXN0ZXItYl9zc2Nfc2FsLWRvX29uX3NlYS1zaG9fbHR6LWRlJTI2bXNjbGtpZCUzZDMxZTVkZjY2ODY1OTFmMjNiYWMzYjk5N2UzYTEzZDIw&rlid=31e5df6686591f23bac3b997e3a13d20&ntb=1&ntb=1')">Купить</button>
+        </article>
+
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="https://www.bing.com/aclk?ld=e8qTEm8OjVlVQHmF5xs9xKnDVUCUz-5xmZfBhe286PbATIQgHLjtG-VyUyifqiIF2wmb8VsKnjN7HaMaxrKUzLhvPnrb0OK93wxz8Qnfq52TyQsKchLhPkiQb3nfAbddBn12T_n6oja4GJVCExDMPmuOqJH0L16yHAEoAZDbuYe9yC0tnUNQY-wc7kEXb3rJao5kGo5A&u=aHR0cHMlM2ElMmYlMmZ3d3cuYnVlcm9zaG9wMjQuZGUlMmZpZGVuYS1nbG9idXMtMzUwODU3JTNmc3JwSWQlM2RmZGExMjU4MGY2MmE0NWMwNDFhYzM0NDYzNzNmNjZmNSUyNnN0b3JlVHlwZSUzZEIyQyUyNmxreiUzZDEyMDcwOTglMjZvYnQlM2QxOSUyNmt3ZGlkJTNkMjg2MjExMi0zOTk2OTg1MzMtMTE1NDQ4ODMyOTQzMzY5Ni1wbGEtNDU3NTc1NTEwMzM2MzU1MyUyNm1zY2xraWQlM2RhZmE4OTc1ZmJmOGYxYTkyMWVjYWYxYWVkOWYxNWY0OA&rlid=afa8975fbf8f1a921ecaf1aed9f15f48&ntb=1&ntb=1">
+                <img class="card__image" src="product6.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.bing.com/aclk?ld=e8qTEm8OjVlVQHmF5xs9xKnDVUCUz-5xmZfBhe286PbATIQgHLjtG-VyUyifqiIF2wmb8VsKnjN7HaMaxrKUzLhvPnrb0OK93wxz8Qnfq52TyQsKchLhPkiQb3nfAbddBn12T_n6oja4GJVCExDMPmuOqJH0L16yHAEoAZDbuYe9yC0tnUNQY-wc7kEXb3rJao5kGo5A&u=aHR0cHMlM2ElMmYlMmZ3d3cuYnVlcm9zaG9wMjQuZGUlMmZpZGVuYS1nbG9idXMtMzUwODU3JTNmc3JwSWQlM2RmZGExMjU4MGY2MmE0NWMwNDFhYzM0NDYzNzNmNjZmNSUyNnN0b3JlVHlwZSUzZEIyQyUyNmxreiUzZDEyMDcwOTglMjZvYnQlM2QxOSUyNmt3ZGlkJTNkMjg2MjExMi0zOTk2OTg1MzMtMTE1NDQ4ODMyOTQzMzY5Ni1wbGEtNDU3NTc1NTEwMzM2MzU1MyUyNm1zY2xraWQlM2RhZmE4OTc1ZmJmOGYxYTkyMWVjYWYxYWVkOWYxNWY0OA&rlid=afa8975fbf8f1a921ecaf1aed9f15f48&ntb=1&ntb=1">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>глобус</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.bing.com/aclk?ld=e8qTEm8OjVlVQHmF5xs9xKnDVUCUz-5xmZfBhe286PbATIQgHLjtG-VyUyifqiIF2wmb8VsKnjN7HaMaxrKUzLhvPnrb0OK93wxz8Qnfq52TyQsKchLhPkiQb3nfAbddBn12T_n6oja4GJVCExDMPmuOqJH0L16yHAEoAZDbuYe9yC0tnUNQY-wc7kEXb3rJao5kGo5A&u=aHR0cHMlM2ElMmYlMmZ3d3cuYnVlcm9zaG9wMjQuZGUlMmZpZGVuYS1nbG9idXMtMzUwODU3JTNmc3JwSWQlM2RmZGExMjU4MGY2MmE0NWMwNDFhYzM0NDYzNzNmNjZmNSUyNnN0b3JlVHlwZSUzZEIyQyUyNmxreiUzZDEyMDcwOTglMjZvYnQlM2QxOSUyNmt3ZGlkJTNkMjg2MjExMi0zOTk2OTg1MzMtMTE1NDQ4ODMyOTQzMzY5Ni1wbGEtNDU3NTc1NTEwMzM2MzU1MyUyNm1zY2xraWQlM2RhZmE4OTc1ZmJmOGYxYTkyMWVjYWYxYWVkOWYxNWY0OA&rlid=afa8975fbf8f1a921ecaf1aed9f15f48&ntb=1&ntb=1')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="https://www.bing.com/aclk?ld=e8l8sNPkWemeh8rTj1v-zkcjVUCUzE7qhN0GkrK_gg2iHxjPcwfFSIbSuJBz-VUBaAxS8VKHY84YBu0IQqRcVcVqY0MhN-ZnKHCrBsjPkeGA_uJbBFmB-U5NUdCLiIjae4NsVIEO2Sf4zPEQxJgsJDxzREmJktutTAXMUZioL5EjovdgNj0xDFUwbLDC7ree3Ltsqvag&u=aHR0cHMlM2ElMmYlMmZ3d3cuc3BvcnQtdGhpZW1lLmRlJTJmTGVpY2h0YXRobGV0aWslMmZadWJlaCUyNUMzJTI1QjZyJTJmUGZsZWdlZ2VyJTI1QzMlMjVBNHRlJTJmYXJ0JTNkMjk3MjcwOSUzZnBlJTNkdzNfbzNfYmluZ19kc2FfbGVpY2h0YXRobGV0aWslMjZtc2Nsa2lkJTNkODhiMDQ2ZmI3ZGUyMWRjMDIzZWUyMDA5YTdjODVjOWIlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2RXMyUyNTIwLSUyNTIwRFNBJTI2dXRtX3Rlcm0lM2R3d3cuc3BvcnQtdGhpZW1lLmRlJTI1MkZMZWljaHRhdGhsZXRpayUyNnV0bV9jb250ZW50JTNkTmF2aWdhdGlvbiUyNTIwTGVpY2h0YXRobGV0aWs&rlid=88b046fb7de21dc023ee2009a7c85c9b&ntb=1">
+                <img class="card__image" src="product7.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.bing.com/aclk?ld=e8l8sNPkWemeh8rTj1v-zkcjVUCUzE7qhN0GkrK_gg2iHxjPcwfFSIbSuJBz-VUBaAxS8VKHY84YBu0IQqRcVcVqY0MhN-ZnKHCrBsjPkeGA_uJbBFmB-U5NUdCLiIjae4NsVIEO2Sf4zPEQxJgsJDxzREmJktutTAXMUZioL5EjovdgNj0xDFUwbLDC7ree3Ltsqvag&u=aHR0cHMlM2ElMmYlMmZ3d3cuc3BvcnQtdGhpZW1lLmRlJTJmTGVpY2h0YXRobGV0aWslMmZadWJlaCUyNUMzJTI1QjZyJTJmUGZsZWdlZ2VyJTI1QzMlMjVBNHRlJTJmYXJ0JTNkMjk3MjcwOSUzZnBlJTNkdzNfbzNfYmluZ19kc2FfbGVpY2h0YXRobGV0aWslMjZtc2Nsa2lkJTNkODhiMDQ2ZmI3ZGUyMWRjMDIzZWUyMDA5YTdjODVjOWIlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2RXMyUyNTIwLSUyNTIwRFNBJTI2dXRtX3Rlcm0lM2R3d3cuc3BvcnQtdGhpZW1lLmRlJTI1MkZMZWljaHRhdGhsZXRpayUyNnV0bV9jb250ZW50JTNkTmF2aWdhdGlvbiUyNTIwTGVpY2h0YXRobGV0aWs&rlid=88b046fb7de21dc023ee2009a7c85c9b&ntb=1">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Грабли</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.bing.com/aclk?ld=e8l8sNPkWemeh8rTj1v-zkcjVUCUzE7qhN0GkrK_gg2iHxjPcwfFSIbSuJBz-VUBaAxS8VKHY84YBu0IQqRcVcVqY0MhN-ZnKHCrBsjPkeGA_uJbBFmB-U5NUdCLiIjae4NsVIEO2Sf4zPEQxJgsJDxzREmJktutTAXMUZioL5EjovdgNj0xDFUwbLDC7ree3Ltsqvag&u=aHR0cHMlM2ElMmYlMmZ3d3cuc3BvcnQtdGhpZW1lLmRlJTJmTGVpY2h0YXRobGV0aWslMmZadWJlaCUyNUMzJTI1QjZyJTJmUGZsZWdlZ2VyJTI1QzMlMjVBNHRlJTJmYXJ0JTNkMjk3MjcwOSUzZnBlJTNkdzNfbzNfYmluZ19kc2FfbGVpY2h0YXRobGV0aWslMjZtc2Nsa2lkJTNkODhiMDQ2ZmI3ZGUyMWRjMDIzZWUyMDA5YTdjODVjOWIlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2RXMyUyNTIwLSUyNTIwRFNBJTI2dXRtX3Rlcm0lM2R3d3cuc3BvcnQtdGhpZW1lLmRlJTI1MkZMZWljaHRhdGhsZXRpayUyNnV0bV9jb250ZW50JTNkTmF2aWdhdGlvbiUyNTIwTGVpY2h0YXRobGV0aWs&rlid=88b046fb7de21dc023ee2009a7c85c9b&ntb=1')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="https://www.bing.com/aclk?ld=e8Y_zAvdzi6_WLHvFqNQ69gjVUCUwuAMGiYHkZLjn9vI8RAzhG7upLhQ40Uqh6WhklaWsbx-xnph7cYTDgLPMyc-7mH_YoB1MhpaVmKz8rKXqj92x7Mt9rxeMrKJLhQZQZx8VowdCLxMc-I6q59FHlaJygrB-8lSAhUXoVaq0pA75H9tgN5GoKUcrsBcVuOihg2EfqdA&u=aHR0cHMlM2ElMmYlMmZjbW9kdWwuc29sdXRlbmV0d29yay5jb20lMmZjb21tb24lMmZtb2R1bGVzJTJmYXBpJTJmY21vZHVsJTNmdXJsJTNkaHR0cHMlMjUzQSUyNTJGJTI1MkZzaG9wcGluZy5maWVsbWFubi5kZSUyNTJGMjA0NyUyNTNGY2IudmlkJTI1M0QyNDc3MSUyNTI2Y2IuZmJ1JTI1M0RodHRwcyUyNTI1M0ElMjUyNTJGJTI1MjUyRnd3dy5maWVsbWFubi5kZSUyNTI1MkZwJTI1MjUyRmZpZWxtYW5uLWJlLTAwOC1mYS1mbTM3My1ncmF1X2JlaWdlLTIwNDclMjUyNTJGJTI1MjUzRnZhcmlhbnRpZCUyNTI1M0QxNjAzMzQlMjUyNmNiLmJ1eSUyNTNEMSUyNTI2Y2IucHViJTI1M0RiaWxsaWdlcl9kZV9SWCUyNTI2Y2IubWVkJTI1M0RQU00lMjUyNnV0bV9zb3VyY2UlMjUzRGJpbGxpZ2VyX2NzcyUyNTI2dXRtX21lZGl1bSUyNTNEcHNtJTI1MjZ1dG1fY2FtcGFpZ24lMjUzRERFX0JpbGxpZ2VyX0NTU19GaWVsbWFubl9TaG9wJTI1MjZ1dG1fdGVybSUyNTNEMjQ3NzElMjUyNnV0bV9jb250ZW50JTI1M0RiaWxsaWdlclVVSSUyNm1zY2xpZCUzZDFlMzZiYjAzZjRlMjFjYzc5YzhkZGRmMTE0ZjAyMDQ5JTI2bWlkJTNkMTYzOTgxNTczNjExJTI2bXNwcm9kdWN0aWQlM2QxNjM5ODE1NzM2MTElMjZtYyUzZHhJU3B3YVJ1UjViVSUyNm1zY2FtcGFpZ24lM2QzOTk1NjA0NzAlMjZtc2FkZ3JvdXAlM2QxMTY0MzgzODAyMjcyNjQ5JTI2bXNkZXZpY2UlM2RjJTI2bXNwcm9kdWN0cGFydGl0aW9uJTNkNDU3NjM3MzU4MTM5NTE3MiUyNm1zbmV0d29yayUzZG8lMjZzaG9waWQlM2QyNTA3MiUyNm1zY2xraWQlM2QxZTM2YmIwM2Y0ZTIxY2M3OWM4ZGRkZjExNGYwMjA0OQ&rlid=1e36bb03f4e21cc79c8dddf114f02049&ntb=1&ntb=1">
+                <img class="card__image" src="product8.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.bing.com/aclk?ld=e8Y_zAvdzi6_WLHvFqNQ69gjVUCUwuAMGiYHkZLjn9vI8RAzhG7upLhQ40Uqh6WhklaWsbx-xnph7cYTDgLPMyc-7mH_YoB1MhpaVmKz8rKXqj92x7Mt9rxeMrKJLhQZQZx8VowdCLxMc-I6q59FHlaJygrB-8lSAhUXoVaq0pA75H9tgN5GoKUcrsBcVuOihg2EfqdA&u=aHR0cHMlM2ElMmYlMmZjbW9kdWwuc29sdXRlbmV0d29yay5jb20lMmZjb21tb24lMmZtb2R1bGVzJTJmYXBpJTJmY21vZHVsJTNmdXJsJTNkaHR0cHMlMjUzQSUyNTJGJTI1MkZzaG9wcGluZy5maWVsbWFubi5kZSUyNTJGMjA0NyUyNTNGY2IudmlkJTI1M0QyNDc3MSUyNTI2Y2IuZmJ1JTI1M0RodHRwcyUyNTI1M0ElMjUyNTJGJTI1MjUyRnd3dy5maWVsbWFubi5kZSUyNTI1MkZwJTI1MjUyRmZpZWxtYW5uLWJlLTAwOC1mYS1mbTM3My1ncmF1X2JlaWdlLTIwNDclMjUyNTJGJTI1MjUzRnZhcmlhbnRpZCUyNTI1M0QxNjAzMzQlMjUyNmNiLmJ1eSUyNTNEMSUyNTI2Y2IucHViJTI1M0RiaWxsaWdlcl9kZV9SWCUyNTI2Y2IubWVkJTI1M0RQU00lMjUyNnV0bV9zb3VyY2UlMjUzRGJpbGxpZ2VyX2NzcyUyNTI2dXRtX21lZGl1bSUyNTNEcHNtJTI1MjZ1dG1fY2FtcGFpZ24lMjUzRERFX0JpbGxpZ2VyX0NTU19GaWVsbWFubl9TaG9wJTI1MjZ1dG1fdGVybSUyNTNEMjQ3NzElMjUyNnV0bV9jb250ZW50JTI1M0RiaWxsaWdlclVVSSUyNm1zY2xpZCUzZDFlMzZiYjAzZjRlMjFjYzc5YzhkZGRmMTE0ZjAyMDQ5JTI2bWlkJTNkMTYzOTgxNTczNjExJTI2bXNwcm9kdWN0aWQlM2QxNjM5ODE1NzM2MTElMjZtYyUzZHhJU3B3YVJ1UjViVSUyNm1zY2FtcGFpZ24lM2QzOTk1NjA0NzAlMjZtc2FkZ3JvdXAlM2QxMTY0MzgzODAyMjcyNjQ5JTI2bXNkZXZpY2UlM2RjJTI2bXNwcm9kdWN0cGFydGl0aW9uJTNkNDU3NjM3MzU4MTM5NTE3MiUyNm1zbmV0d29yayUzZG8lMjZzaG9waWQlM2QyNTA3MiUyNm1zY2xraWQlM2QxZTM2YmIwM2Y0ZTIxY2M3OWM4ZGRkZjExNGYwMjA0OQ&rlid=1e36bb03f4e21cc79c8dddf114f02049&ntb=1&ntb=1">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>очки для ношения</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.bing.com/aclk?ld=e8Y_zAvdzi6_WLHvFqNQ69gjVUCUwuAMGiYHkZLjn9vI8RAzhG7upLhQ40Uqh6WhklaWsbx-xnph7cYTDgLPMyc-7mH_YoB1MhpaVmKz8rKXqj92x7Mt9rxeMrKJLhQZQZx8VowdCLxMc-I6q59FHlaJygrB-8lSAhUXoVaq0pA75H9tgN5GoKUcrsBcVuOihg2EfqdA&u=aHR0cHMlM2ElMmYlMmZjbW9kdWwuc29sdXRlbmV0d29yay5jb20lMmZjb21tb24lMmZtb2R1bGVzJTJmYXBpJTJmY21vZHVsJTNmdXJsJTNkaHR0cHMlMjUzQSUyNTJGJTI1MkZzaG9wcGluZy5maWVsbWFubi5kZSUyNTJGMjA0NyUyNTNGY2IudmlkJTI1M0QyNDc3MSUyNTI2Y2IuZmJ1JTI1M0RodHRwcyUyNTI1M0ElMjUyNTJGJTI1MjUyRnd3dy5maWVsbWFubi5kZSUyNTI1MkZwJTI1MjUyRmZpZWxtYW5uLWJlLTAwOC1mYS1mbTM3My1ncmF1X2JlaWdlLTIwNDclMjUyNTJGJTI1MjUzRnZhcmlhbnRpZCUyNTI1M0QxNjAzMzQlMjUyNmNiLmJ1eSUyNTNEMSUyNTI2Y2IucHViJTI1M0RiaWxsaWdlcl9kZV9SWCUyNTI2Y2IubWVkJTI1M0RQU00lMjUyNnV0bV9zb3VyY2UlMjUzRGJpbGxpZ2VyX2NzcyUyNTI2dXRtX21lZGl1bSUyNTNEcHNtJTI1MjZ1dG1fY2FtcGFpZ24lMjUzRERFX0JpbGxpZ2VyX0NTU19GaWVsbWFubl9TaG9wJTI1MjZ1dG1fdGVybSUyNTNEMjQ3NzElMjUyNnV0bV9jb250ZW50JTI1M0RiaWxsaWdlclVVSSUyNm1zY2xpZCUzZDFlMzZiYjAzZjRlMjFjYzc5YzhkZGRmMTE0ZjAyMDQ5JTI2bWlkJTNkMTYzOTgxNTczNjExJTI2bXNwcm9kdWN0aWQlM2QxNjM5ODE1NzM2MTElMjZtYyUzZHhJU3B3YVJ1UjViVSUyNm1zY2FtcGFpZ24lM2QzOTk1NjA0NzAlMjZtc2FkZ3JvdXAlM2QxMTY0MzgzODAyMjcyNjQ5JTI2bXNkZXZpY2UlM2RjJTI2bXNwcm9kdWN0cGFydGl0aW9uJTNkNDU3NjM3MzU4MTM5NTE3MiUyNm1zbmV0d29yayUzZG8lMjZzaG9waWQlM2QyNTA3MiUyNm1zY2xraWQlM2QxZTM2YmIwM2Y0ZTIxY2M3OWM4ZGRkZjExNGYwMjA0OQ&rlid=1e36bb03f4e21cc79c8dddf114f02049&ntb=1&ntb=1')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="https://www.bing.com/ck/a?!&&p=9009f64696913334JmltdHM9MTcyNzEzNjAwMCZpZ3VpZD0zNDk0M2IxNC1mZmU2LTY3ODQtMmMyNS0yZjg3ZmU3OTY2N2MmaW5zaWQ9NTI0Ng&ptn=3&ver=2&hsh=3&fclid=34943b14-ffe6-6784-2c25-2f87fe79667c&psq=auto+rot+kaufen+&u=a1aHR0cHM6Ly9zdWNoZW4ubW9iaWxlLmRlL2F1dG8vcm90Lmh0bWwjOn46dGV4dD1Lb3N0ZW5sb3NlIEF1dG9iZXdlcnR1bmcgLSBzY2huZWxsIHVuZD9tc29ja2lkPTM0OTQzYjE0ZmZlNjY3ODQyYzI1MmY4N2ZlNzk2Njdj&ntb=1">
+                <img class="card__image" src="product9.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.bing.com/ck/a?!&&p=9009f64696913334JmltdHM9MTcyNzEzNjAwMCZpZ3VpZD0zNDk0M2IxNC1mZmU2LTY3ODQtMmMyNS0yZjg3ZmU3OTY2N2MmaW5zaWQ9NTI0Ng&ptn=3&ver=2&hsh=3&fclid=34943b14-ffe6-6784-2c25-2f87fe79667c&psq=auto+rot+kaufen+&u=a1aHR0cHM6Ly9zdWNoZW4ubW9iaWxlLmRlL2F1dG8vcm90Lmh0bWwjOn46dGV4dD1Lb3N0ZW5sb3NlIEF1dG9iZXdlcnR1bmcgLSBzY2huZWxsIHVuZD9tc29ja2lkPTM0OTQzYjE0ZmZlNjY3ODQyYzI1MmY4N2ZlNzk2Njdj&ntb=1">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Порше за несколько евро</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.bing.com/ck/a?!&&p=9009f64696913334JmltdHM9MTcyNzEzNjAwMCZpZ3VpZD0zNDk0M2IxNC1mZmU2LTY3ODQtMmMyNS0yZjg3ZmU3OTY2N2MmaW5zaWQ9NTI0Ng&ptn=3&ver=2&hsh=3&fclid=34943b14-ffe6-6784-2c25-2f87fe79667c&psq=auto+rot+kaufen+&u=a1aHR0cHM6Ly9zdWNoZW4ubW9iaWxlLmRlL2F1dG8vcm90Lmh0bWwjOn46dGV4dD1Lb3N0ZW5sb3NlIEF1dG9iZXdlcnR1bmcgLSBzY2huZWxsIHVuZD9tc29ja2lkPTM0OTQzYjE0ZmZlNjY3ODQyYzI1MmY4N2ZlNzk2Njdj&ntb=1')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="https://www.bing.com/aclk?ld=e887Q9IY4AycPCvP6iztFQ7zVUCUx9NzGms16BJnZ8plFF5w-8QOci-IQdVpOQwWd-9imyDR12MdySCVvHRyc_pBWFQGVI3q_8AE0q0Y1zi81aLR6oWpi6U7MeIdeh8Ms7saRV_5AhdS8mfRPXJISIQi9pYs0ndJDyz887XRk-hDbhvj00Fwtv6qCMJ4Et9gj3FBvW1A&u=aHR0cHMlM2ElMmYlMmZ3d3cudmlraW5nLmRlJTJmZGUlMmZwJTJmNTQ5NDgzMyUzZmFjcXNndCUzZERFLVJJQyUyNmN1c3RvbWVyVHlwZSUzZGNvbnN1bWVyJTI2Y21fbW1jJTNkQmluZy1fLS1fLS1fLVBST0RVQ1RfR1JPVVAlMjZnY2xpZCUzZGFmMGU1ZDIyMTAwNTE2OTcyNTFjM2JkMGNmODg3NzI4JTI2Z2Nsc3JjJTNkM3AuZHMlMjYlMjZ1dG1faWQlM2QzOTkzMjk0NzglMjZtc2Nsa2lkJTNkYWYwZTVkMjIxMDA1MTY5NzI1MWMzYmQwY2Y4ODc3MjglMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2RQTEFfR0VOX0dPT0dMRS1TSE9QUElOR19HRU5FUkFMLTAwX0dPU0MlMjZ1dG1fdGVybSUzZDQ1NzYzMDQ4NTU3MDk4MzklMjZ1dG1fY29udGVudCUzZEFMTF9leGNsJTI1M0FzdGFtcHNfZXhjbCUyNTNBdGVjaG5paygwNC0wMy0yMDIxKV9pbmNsJTI1M0F0ZWNobmlrKDIyLTA2LTIxKQ&rlid=af0e5d2210051697251c3bd0cf887728&ntb=1&ntb=1">
+                <img class="card__image" src="product10.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.bing.com/aclk?ld=e887Q9IY4AycPCvP6iztFQ7zVUCUx9NzGms16BJnZ8plFF5w-8QOci-IQdVpOQwWd-9imyDR12MdySCVvHRyc_pBWFQGVI3q_8AE0q0Y1zi81aLR6oWpi6U7MeIdeh8Ms7saRV_5AhdS8mfRPXJISIQi9pYs0ndJDyz887XRk-hDbhvj00Fwtv6qCMJ4Et9gj3FBvW1A&u=aHR0cHMlM2ElMmYlMmZ3d3cudmlraW5nLmRlJTJmZGUlMmZwJTJmNTQ5NDgzMyUzZmFjcXNndCUzZERFLVJJQyUyNmN1c3RvbWVyVHlwZSUzZGNvbnN1bWVyJTI2Y21fbW1jJTNkQmluZy1fLS1fLS1fLVBST0RVQ1RfR1JPVVAlMjZnY2xpZCUzZGFmMGU1ZDIyMTAwNTE2OTcyNTFjM2JkMGNmODg3NzI4JTI2Z2Nsc3JjJTNkM3AuZHMlMjYlMjZ1dG1faWQlM2QzOTkzMjk0NzglMjZtc2Nsa2lkJTNkYWYwZTVkMjIxMDA1MTY5NzI1MWMzYmQwY2Y4ODc3MjglMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2RQTEFfR0VOX0dPT0dMRS1TSE9QUElOR19HRU5FUkFMLTAwX0dPU0MlMjZ1dG1fdGVybSUzZDQ1NzYzMDQ4NTU3MDk4MzklMjZ1dG1fY29udGVudCUzZEFMTF9leGNsJTI1M0FzdGFtcHNfZXhjbCUyNTNBdGVjaG5paygwNC0wMy0yMDIxKV9pbmNsJTI1M0F0ZWNobmlrKDIyLTA2LTIxKQ&rlid=af0e5d2210051697251c3bd0cf887728&ntb=1&ntb=1">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Ручки BIC</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.bing.com/aclk?ld=e887Q9IY4AycPCvP6iztFQ7zVUCUx9NzGms16BJnZ8plFF5w-8QOci-IQdVpOQwWd-9imyDR12MdySCVvHRyc_pBWFQGVI3q_8AE0q0Y1zi81aLR6oWpi6U7MeIdeh8Ms7saRV_5AhdS8mfRPXJISIQi9pYs0ndJDyz887XRk-hDbhvj00Fwtv6qCMJ4Et9gj3FBvW1A&u=aHR0cHMlM2ElMmYlMmZ3d3cudmlraW5nLmRlJTJmZGUlMmZwJTJmNTQ5NDgzMyUzZmFjcXNndCUzZERFLVJJQyUyNmN1c3RvbWVyVHlwZSUzZGNvbnN1bWVyJTI2Y21fbW1jJTNkQmluZy1fLS1fLS1fLVBST0RVQ1RfR1JPVVAlMjZnY2xpZCUzZGFmMGU1ZDIyMTAwNTE2OTcyNTFjM2JkMGNmODg3NzI4JTI2Z2Nsc3JjJTNkM3AuZHMlMjYlMjZ1dG1faWQlM2QzOTkzMjk0NzglMjZtc2Nsa2lkJTNkYWYwZTVkMjIxMDA1MTY5NzI1MWMzYmQwY2Y4ODc3MjglMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2RQTEFfR0VOX0dPT0dMRS1TSE9QUElOR19HRU5FUkFMLTAwX0dPU0MlMjZ1dG1fdGVybSUzZDQ1NzYzMDQ4NTU3MDk4MzklMjZ1dG1fY29udGVudCUzZEFMTF9leGNsJTI1M0FzdGFtcHNfZXhjbCUyNTNBdGVjaG5paygwNC0wMy0yMDIxKV9pbmNsJTI1M0F0ZWNobmlrKDIyLTA2LTIxKQ&rlid=af0e5d2210051697251c3bd0cf887728&ntb=1&ntb=1')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="https://www.bing.com/aclk?ld=e8qiyNDoQaP4GIjjBhfEdG3TVUCUw8QRvrXcPJZwvCYDRh46dzDc-fB0TpUtm8ZuP13iD1Wv7tBoGm9v5aSEvZ2Koso0OQesa3o_28LXUmJxOqZRaJcuAENcTtZFeLtwwyNXOw_jVF25-RF_dyzrgwDzNQVVZ38wQbh6qckkAXwRk-F4PCkG_3rg8LyQqGlDRj8rRgWA&u=aHR0cHMlM2ElMmYlMmZ3d3cuYW1hem9uLmRlJTJmQWdhbmRlLUtvbXBvc3R0b2lsZXR0ZS1HYXJ0ZW50b2lsZXR0ZS1Ucm9ja2VudG9pbGV0dGUtQ2FtcGluZ3RvaWxldHRlJTJmZHAlMmZCMDg1REJZQ0pTJTJmcmVmJTNkYXNjX2RmX0IwODVEQllDSlMlM2Z0YWclM2RiaW5nc2hvcHBpbjBiLTIxJTI2bGlua0NvZGUlM2RkZjAlMjZodmFkaWQlM2Q4MDgxNDIwMzAxMTc4NyUyNmh2bmV0dyUzZG8lMjZodnFtdCUzZGUlMjZodmJtdCUzZGJlJTI2aHZkZXYlM2RjJTI2aHZsb2NpbnQlM2QlMjZodmxvY3BoeSUzZCUyNmh2dGFyZ2lkJTNkcGxhLTQ1ODQ0MTM3NDM1ODM4ODklMjZwc2MlM2Qx&rlid=55fb9360853e12c3e556f59265b80cd7&ntb=1&ntb=1">
+                <img class="card__image" src="product11.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="https://www.bing.com/aclk?ld=e8qiyNDoQaP4GIjjBhfEdG3TVUCUw8QRvrXcPJZwvCYDRh46dzDc-fB0TpUtm8ZuP13iD1Wv7tBoGm9v5aSEvZ2Koso0OQesa3o_28LXUmJxOqZRaJcuAENcTtZFeLtwwyNXOw_jVF25-RF_dyzrgwDzNQVVZ38wQbh6qckkAXwRk-F4PCkG_3rg8LyQqGlDRj8rRgWA&u=aHR0cHMlM2ElMmYlMmZ3d3cuYW1hem9uLmRlJTJmQWdhbmRlLUtvbXBvc3R0b2lsZXR0ZS1HYXJ0ZW50b2lsZXR0ZS1Ucm9ja2VudG9pbGV0dGUtQ2FtcGluZ3RvaWxldHRlJTJmZHAlMmZCMDg1REJZQ0pTJTJmcmVmJTNkYXNjX2RmX0IwODVEQllDSlMlM2Z0YWclM2RiaW5nc2hvcHBpbjBiLTIxJTI2bGlua0NvZGUlM2RkZjAlMjZodmFkaWQlM2Q4MDgxNDIwMzAxMTc4NyUyNmh2bmV0dyUzZG8lMjZodnFtdCUzZGUlMjZodmJtdCUzZGJlJTI2aHZkZXYlM2RjJTI2aHZsb2NpbnQlM2QlMjZodmxvY3BoeSUzZCUyNmh2dGFyZ2lkJTNkcGxhLTQ1ODQ0MTM3NDM1ODM4ODklMjZwc2MlM2Qx&rlid=55fb9360853e12c3e556f59265b80cd7&ntb=1&ntb=1">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>какашки, какашки для нас развлечение, купите наш органический туалет</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('https://www.bing.com/aclk?ld=e8qiyNDoQaP4GIjjBhfEdG3TVUCUw8QRvrXcPJZwvCYDRh46dzDc-fB0TpUtm8ZuP13iD1Wv7tBoGm9v5aSEvZ2Koso0OQesa3o_28LXUmJxOqZRaJcuAENcTtZFeLtwwyNXOw_jVF25-RF_dyzrgwDzNQVVZ38wQbh6qckkAXwRk-F4PCkG_3rg8LyQqGlDRj8rRgWA&u=aHR0cHMlM2ElMmYlMmZ3d3cuYW1hem9uLmRlJTJmQWdhbmRlLUtvbXBvc3R0b2lsZXR0ZS1HYXJ0ZW50b2lsZXR0ZS1Ucm9ja2VudG9pbGV0dGUtQ2FtcGluZ3RvaWxldHRlJTJmZHAlMmZCMDg1REJZQ0pTJTJmcmVmJTNkYXNjX2RmX0IwODVEQllDSlMlM2Z0YWclM2RiaW5nc2hvcHBpbjBiLTIxJTI2bGlua0NvZGUlM2RkZjAlMjZodmFkaWQlM2Q4MDgxNDIwMzAxMTc4NyUyNmh2bmV0dyUzZG8lMjZodnFtdCUzZGUlMjZodmJtdCUzZGJlJTI2aHZkZXYlM2RjJTI2aHZsb2NpbnQlM2QlMjZodmxvY3BoeSUzZCUyNmh2dGFyZ2lkJTNkcGxhLTQ1ODQ0MTM3NDM1ODM4ODklMjZwc2MlM2Qx&rlid=55fb9360853e12c3e556f59265b80cd7&ntb=1&ntb=1')">Купить</button>
+        </article>
+        
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product12.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="#">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Бум-лампа</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('#')">Купить</button>
+        </article>
+        
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product13.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="#">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Жуткие ароматы</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('#')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product14.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="#">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Спи спокойно шапочка</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('#')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product15.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="#">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Пять литров дерьма</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('#')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product16.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="#">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Летать, летать нам весело, и падать тоже</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('#')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product17.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="#">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Новый дом на дереве с инновационными технологиями</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('#')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product18.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="#">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Нокиа 3310 с черными ушками</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('#')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product19.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="#">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p>Пластиковый деревянный стул</p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('#')">Купить</button>
+        </article>
+
+        <article class="card">
+            <!-- Bild-Wrapper -->
+            <a class="card__image-wrapper" href="#">
+                <img class="card__image" src="product20.jpg" alt="Produktbild">
+            </a>
+        
+            <!-- Titel und Link -->
+            <h3 class="card__title">
+                <a class="card__link" href="#">Дополнительная информация</a>
+            </h3>
+        
+            <!-- Beschreibung -->
+            <div class="card__description">
+                <p></p>
+            </div>
+        
+            <!-- Kaufen-Button -->
+            <button class="card__buy-button" type="button" onclick="openLink('#')">Купить</button>
+        </article>
+
+        <!-- Weitere Artikel ... -->
+        
+    </div>
+</body>
+</html>
